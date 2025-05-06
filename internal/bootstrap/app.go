@@ -14,8 +14,10 @@ func SetupRouter() *gin.Engine {
 	router := gin.Default()
 	client := router.Group("/api/client")
 	admin := router.Group("/api/admin")
+	auth := router.Group("/api/auth")
 	routes.ClientRoutes(client)
 	routes.AdminRoutes(admin)
+	routes.AuthRoutes(auth)
 
 	return router
 }
