@@ -1,18 +1,28 @@
-🚀 Simple Go Project
+# 🚀 Simple Go Project
 
-Minimal va toza arxitekturaga ega Go backend loyiha. API-first yondashuv, tez ishga tushadi, ortiqcha “enterprise drama” yo‘q.
+Minimal and clean Go (Golang) backend project. API-first approach, fast startup, no unnecessary complexity.
 
-📌 Overview
+---
 
-Ushbu loyiha REST API xizmatini taqdim etadi. Strukturasi oddiy, kengaytirish oson, va production’ga moslab yozilgan.
+## 📌 Overview
 
-⚙️ Tech Stack
-Language: Go
-HTTP Router: net/http (yoki chi / gin qo‘shishingiz mumkin)
-Database: PostgreSQL (optional)
-Config: .env
-Build: Go modules
-📁 Project Structure
+This project provides a simple REST API service. The structure is clean, scalable, and production-ready.
+
+---
+
+## ⚙️ Tech Stack
+
+- Language: Go
+- HTTP Router: net/http (can be replaced with Gin / Chi)
+- Database: PostgreSQL (optional)
+- Config: `.env`
+- Build: Go Modules
+
+---
+
+## 📁 Project Structure
+
+```
 .
 ├── cmd/
 │   └── server/
@@ -29,47 +39,93 @@ Build: Go modules
 ├── .env
 ├── go.mod
 └── README.md
-🚀 Getting Started
-1. Clone repository
+```
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone repository
+
+```bash
 git clone https://github.com/your-username/your-project.git
 cd your-project
-2. Install dependencies
+```
+
+### 2. Install dependencies
+
+```bash
 go mod tidy
-3. Setup environment
+```
 
-.env fayl yarating:
+### 3. Setup environment
 
+Create a `.env` file:
+
+```env
 APP_PORT=8080
 DB_HOST=localhost
 DB_PORT=5432
 DB_USER=postgres
 DB_PASSWORD=secret
 DB_NAME=mydb
-4. Run project
+```
+
+### 4. Run project
+
+```bash
 go run cmd/server/main.go
+```
 
-Yoki build qilib:
+Or build and run:
 
+```bash
 go build -o app ./cmd/server
 ./app
-📡 API Endpoints
-Method	Endpoint	Description
-GET	/health	Health check
-GET	/api/items	Get all items
-POST	/api/items	Create new item
-🧠 Architecture
-handler — HTTP layer (request/response)
-service — business logic
-repository — database access
-model — data structures
+```
 
-Clean separation: handler → service → repository
+---
 
-🧪 Testing
+## 📡 API Endpoints
+
+| Method | Endpoint     | Description        |
+|--------|-------------|--------------------|
+| GET    | /health     | Health check       |
+| GET    | /api/items  | Get all items      |
+| POST   | /api/items  | Create new item    |
+
+---
+
+## 🧠 Architecture
+
+- `handler` — HTTP layer (request/response)
+- `service` — business logic
+- `repository` — database layer
+- `model` — data structures
+
+Flow: `handler → service → repository`
+
+---
+
+## 🧪 Testing
+
+```bash
 go test ./...
-📦 Build for Production
+```
+
+---
+
+## 📦 Build for Production
+
+```bash
 CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o app ./cmd/server
-🐳 Docker (optional)
+```
+
+---
+
+## 🐳 Docker (optional)
+
+```dockerfile
 FROM golang:1.22-alpine
 
 WORKDIR /app
@@ -78,12 +134,20 @@ COPY . .
 RUN go build -o app ./cmd/server
 
 CMD ["./app"]
-🛠️ Future Improvements
-JWT authentication
-Middleware (logging, rate limit)
-Swagger docs
-CI/CD pipeline
-Caching (Redis)
-📄 License
+```
+
+---
+
+## 🛠️ Future Improvements
+
+- JWT authentication
+- Middleware (logging, rate limiting)
+- Swagger documentation
+- CI/CD pipeline
+- Redis caching
+
+---
+
+## 📄 License
 
 MIT License
